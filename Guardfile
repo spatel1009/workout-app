@@ -53,6 +53,10 @@ guard :rspec, cmd: "bundle exec rspec" do
     ]
   end
 
+  watch(%r{^app/models/(.+)\.rb$}) { |m| "spec/features/#{m[1]}s" }
+  watch(%r{^app/controllers/(.+)_(controller)\.rb$}) { |m| "spec/features" }
+  watch(rails.routes)          { "#{rspec.spec_dir}" }
+
   # Rails config changes
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
