@@ -42,6 +42,11 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def increment
+    @view = View.exercise_views
+    @view.cinrement!(:count)
+  end
+
   
   private
   def set_exercise
