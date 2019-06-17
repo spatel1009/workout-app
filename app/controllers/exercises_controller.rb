@@ -1,9 +1,10 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @exercises = Exercise.all_user_exer(current_user)
+    @user = User.find(params[:user_id])
+    @exercises = Exercise.all_user_exer(@user)
   end
 
   def new

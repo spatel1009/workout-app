@@ -1,6 +1,6 @@
 <div class="col-md-6">
-  <%= link_to "Edit exercise", edit_user_exercise_path(user_id: current_user.id, id: exercise), class: 'btn btn-primary ed-btn' %>
+  <%= link_to "Edit exercise", edit_user_exercise_path(user_id: @user.id, id: exercise), class: 'btn btn-primary ed-btn' %>
 </div>
 <div class="col-md-6">
-  <%= link_to 'Delete exercise',  user_exercise_path(current_user, exercise), method: :delete, data: { confirm: 'Are you sure you want to delete the article?'}, class: 'btn btn-danger ed-btn' %>
+  <%= link_to 'Delete exercise',  user_exercise_path(@user, exercise), method: :delete, data: { confirm: 'Are you sure you want to delete the article?'}, class: 'btn btn-danger ed-btn' %>
 </div>

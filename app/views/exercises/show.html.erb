@@ -1,1 +1,21 @@
-<%= @exercise.duration_in_min %>
+<div class="container">
+	<div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <strong><p class='post-title'> Workout date: <%= @exercise.workout_date %></p></strong>
+        </div>
+        <div class="panel-body">
+          <p>
+            Lorem ipsum dolor sit amet, id nec conceptam conclusionemque. Et eam tation option. Utinam salutatus ex eum. Ne mea dicit tibique facilisi, ea mei omittam explicari conclusionemque ad nobis propriae quaerendum sea. sum dolor sit amet, id nec conceptam conclusionemque.sum dolor sit amet.
+          </p>        
+        </div>                  
+        <div class="panel-footer">
+          <span class="glyphicon glyphicon-user" id="start"></span> 
+          <label id="started">By <p id='startedby'><%=@exercise.user.first_name%></p></label> | 
+          <span class="glyphicon glyphicon-eye-open" id="visit"></span> <p id="visited">Views <%= @exercise.views.count %> Times</p>
+        </div>
+      </div>
+    </div>
+	</div>
+</div>

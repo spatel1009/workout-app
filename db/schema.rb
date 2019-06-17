@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_17_170916) do
+ActiveRecord::Schema.define(version: 2019_06_17_225931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,5 +39,14 @@ ActiveRecord::Schema.define(version: 2019_06_17_170916) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "views", force: :cascade do |t|
+    t.integer "count", default: 0
+    t.bigint "exercise_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exercise_id"], name: "index_views_on_exercise_id"
+  end
+
   add_foreign_key "exercises", "users"
+  add_foreign_key "views", "exercises"
 end
