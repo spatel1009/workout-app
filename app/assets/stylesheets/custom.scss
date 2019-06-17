@@ -69,9 +69,18 @@ body {
     margin-top: 15px;
   }
 
+  // Flash styling
+  .alert-alert {
+    @extend .alert-danger;
+  }
+  
+  .alert-notice {
+    @extend .alert-warning;
+  }
+
   // Devise form buttons
 
-  .form-btn {
+  .btn {
     width: 100%;
   }
 
