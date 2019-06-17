@@ -84,6 +84,72 @@ body {
     width: 100%;
   }
 
+  // Exercise index
+  
+
+  .col-xs-12 {
+    width: 100%;
+}
+
+.exer-grids {
+    overflow: hidden;
+    margin: 0 -15px;
+}
+
+.exer-grids .grid {
+    background-color: #fff;
+    width: calc(33.33% - 30px);
+    float: left;
+    padding: 15px;
+    margin: 20px 15px 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+.entry-body {
+  padding: 27px 10px;
+}
+
+.entry-body .cat {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6220d9;
+  text-transform: uppercase;
+}
+
+.entry-body h3 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.30em;
+  margin: 3px 0 0.73em;
+}
+
+.entry-body h3 a {
+  color: #41516a;
+}
+
+.entry-body h3 a:hover {
+  color: #6220d9;
+  text-decoration: none;
+}
+
+.entry-body p {
+  margin-bottom: 2em;
+  color: #90949a;
+  line-height: 1.8em;
+  height: 250px;
+}
+
+.ed-btn {
+  font-size: 12px; 
+}
+
+.btn-new {
+  margin: 10px;
+  background-color: rgb(77, 207, 233);
+}
   // Chart Styling
   
 path {

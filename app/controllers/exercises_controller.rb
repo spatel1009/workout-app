@@ -1,7 +1,9 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
+    @exercises = Exercise.all_user_exer(current_user)
   end
 
   def new
@@ -24,11 +26,18 @@ class ExercisesController < ApplicationController
   def edit; end
 
   def update
-    if @exercise.update!(exercise_params)
+    if @exercise.update_attributes!(exercise_params)
       flash[:success] = 'Exercise has been updated'
       redirect_to user_exercise_path(current_user, @exercise)
     else
       render 'edit'
+    end
+  end
+
+  def destroy
+    if @exercise.destroy
+      flash[:alert] = 'Exercise successfully deleted'
+      redirect_to user_exercises_path(current_user)
     end
   end
 

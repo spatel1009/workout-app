@@ -15,7 +15,7 @@ RSpec.feature 'Creating Exercise' do
     fill_in 'Duration', with:70
     fill_in 'Workout details', with: 'Weight lifting'
     fill_in 'Activity date', with: '2016-07-26'
-    click_button 'Create exercise'
+    click_button 'Create Exercise'
 
     expect(page).to have_content('Exercise has been created')
     
@@ -28,7 +28,7 @@ RSpec.feature 'Creating Exercise' do
     fill_in 'Duration', with:70
     fill_in 'Workout details', with: ''
     fill_in 'Activity date', with: ''
-    click_button 'Create exercise'
+    click_button 'Create Exercise'
 
     expect(page).to have_content("Workout can't be blank")
     expect(page).to have_content("Workout date can't be blank")

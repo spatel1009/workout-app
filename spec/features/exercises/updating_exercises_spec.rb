@@ -7,13 +7,15 @@ RSpec.feature 'Successfully update an exercise' do
 
     login_as(@sohel)
     visit '/'
-    click_link 'My Lounge'
-    click_link "Edit exercise #{@exercise.id}"
-    expect(page).to have_link('Back')
   end
 
   scenario 'with valid input' do
+    click_link 'My Lounge'
+    click_link("Edit exercise")
+    expect(page).to have_link('Back')
+    
     fill_in 'Duration', with: 75
+    click_button 'Update Exercise'
 
     expect(page).to have_content('Exercise has been updated')
     expect(current_path).to eq(user_exercise_path(@sohel, @exercise))

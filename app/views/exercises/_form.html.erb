@@ -1,4 +1,4 @@
-<%= form_with(model: [current_user, current_user.exercises.build], local:true, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
+<%= form_with(model: [current_user, @exercise], local:true, html: {class: 'form-horizontal', role: 'form'}) do |f| %>
   <%= render 'form_errors' %>
 
   <div class='form-group'>
@@ -30,7 +30,7 @@
 
   <div class='form-group'>
     <div class='col-md-offset-2 col-md-10'>
-      <%= f.submit 'Create exercise', class: 'btn btn-success btn-lg' %>
+      <%= f.submit class: 'btn btn-success btn-lg' %>
     </div>
   </div>
 
