@@ -2,30 +2,32 @@
 @import 'bootstrap-sprockets';
 
 body {
-  margin-top: 75px;
+  margin-top: 100px;
+  background-color: black;
+  color: #d6dadc;
+  font-family: 'Mali', cursive;
 }
 
 // Navbar
 
 .navbar {
-  background: rgb(17, 48, 224);
+  background: rgb(37, 37, 37);
   padding-bottom: 20px;
-  height:75px;
  }
  
  .navbar-default .navbar-brand {
    padding-top: 25px;
    font-size: 150%;
    font-weight: bold;
-   color: #ffffff;
+   color: #d6dadc;
  }
  
  .navbar-default .navbar-brand:hover {
-   color: #4C5B5C;
+   color: #D4AF37;
  }
  
  .navbar-default {
-   border: rgb(0, 2, 65);
+   border-bottom: 5px solid rgb(19, 19, 19);
  }
  
  .navbar-nav {
@@ -36,11 +38,11 @@ body {
  .navbar-default .navbar-nav li > a {
    font-weight: bold;
    font-size: 130%;
-   color: #ffffff;
+   color: #d6dadc;
  }
  
  .navbar-default .navbar-nav li > a:hover {
-   color: #4C5B5C;
+   color: #D4AF37;
  }
 
  .navbar-default .navbar-nav > .active > a {
@@ -54,7 +56,7 @@ body {
  // Devise errors
 
  #error_explanation {
-  background-color: #f2dede; 
+  background-color: #d6dadc; 
   color: #a94442; 
   text-align: left;
   padding: 5px 20px; 
@@ -78,17 +80,41 @@ body {
     @extend .alert-warning;
   }
 
-  // Devise form buttons
+  // Devise
+
+  .form-dev {
+    color: #D4AF37;
+  }
+
+  .dev-form-field {
+    background-color: #d6dadc;
+  }
 
   .btn {
     width: 100%;
   }
 
+  .btn-dev-upd {
+    color: #d6dadc;
+    background-color: #D4AF37;
+  }
+
+  .btn-dev-del {
+    background-color: #C52233;
+  }
+
+  // Exercise form
+
+@media (min-width: 768px) {
+  .form-horizontal .control-label {
+    text-align: left;
+  }
+}
+
   // Exercise index
   
-
-  .col-xs-12 {
-    width: 100%;
+.col-xs-12 {
+  width: 100%;
 }
 
 .exer-grids {
@@ -97,14 +123,14 @@ body {
 }
 
 .exer-grids .grid {
-    background-color: #fff;
+    background-color: rgb(219, 218, 218);
     width: calc(33.33% - 30px);
     float: left;
     padding: 15px;
     margin: 20px 15px 15px;
     border-radius: 10px;
-    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 0 30px rgba(230, 225, 225, 0.863);
+    box-shadow: 0 0 30px rgba(230, 225, 225, 0.863);
 }
 
 .entry-body {
@@ -115,7 +141,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #6220d9;
+  color: #D4AF37;
   text-transform: uppercase;
 }
 
@@ -124,41 +150,76 @@ body {
   font-weight: 600;
   line-height: 1.30em;
   margin: 3px 0 0.73em;
+  font-family: 'Roboto', sans-serif;
+  background: -webkit-linear-gradient(#D4AF37, rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .entry-body h3 a {
-  color: #41516a;
+  color: #000000;
 }
 
 .entry-body h3 a:hover {
-  color: #6220d9;
+  color: #D4AF37;
   text-decoration: none;
 }
 
 .entry-body p {
   margin-bottom: 2em;
-  color: #90949a;
+  color: #000000;
   line-height: 1.8em;
   height: 250px;
 }
 
 .ed-btn {
-  font-size: 12px; 
+  font-size: 11px; 
+  color: rgb(219, 218, 218);
 }
 
 .btn-new {
   margin: 10px;
-  background-color: rgb(77, 207, 233);
+  background-color: #D4AF37;
+}
+
+.btn-new:hover {
+  background-color: white; 
+  color: #D4AF37;
+}
+
+.btn-ed {
+  background-color: black;
+}
+
+.btn-del {
+  background-color: #EC4E20;
 }
 
   // Show page
 
 #start { font-size: 1em; }
+
 #started { font-size: 1em; }
+
 #startedby { font-size: 1.2em; }
-#visited { font-size: 1.2em; }
+
+#visited { 
+  font-size: 1.2em;
+  display: inline;
+  padding-left: 5px;
+}
+
 #visit { font-size: 1em; }
-.post-title { font-size: 1.5em; text-decoration: none; color: #990099; }
+
+.post-title { 
+  font-size: 1.5em; 
+  text-decoration: none; 
+  color: #990099; 
+}
+
+.panel {
+  margin-top: 15px;
+}
 
   // Chart Styling
   

@@ -22,7 +22,9 @@ class ExercisesController < ApplicationController
     end
   end
 
-  def show; end
+  def show 
+    @exercise.increment!(:count)
+  end
 
   def edit; end
 
@@ -42,11 +44,6 @@ class ExercisesController < ApplicationController
     end
   end
 
-  def increment
-    @view = View.exercise_views
-    @view.cinrement!(:count)
-  end
-
   
   private
   def set_exercise
@@ -54,6 +51,6 @@ class ExercisesController < ApplicationController
   end
 
   def exercise_params
-    params.require(:exercise).permit(:user_id, :duration_in_min, :workout, :workout_date)
+    params.require(:exercise).permit(:user_id, :duration_in_min, :workout, :workout_date, :count)
   end
 end

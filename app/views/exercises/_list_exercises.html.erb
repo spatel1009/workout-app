@@ -13,7 +13,7 @@
             <span class="cat">Created: <%= time_ago_in_words(exercise.created_at) %> ago</span>
             <p><%= truncate(exercise.workout, length: 250) %></p>
             <div class="row">
-              <%= render partial: 'edit_delete', locals: {exercise: exercise} %>
+              <%= exercise_owner(exercise) %>
             </div>
           </div>      
         </div>
