@@ -6,5 +6,6 @@ class Exercise < ApplicationRecord
   validates :workout_date, presence: true
 
   scope :all_user_exer, ->(user) { where('exercises.user_id >= ?', user)}
-  default_scope { order(created_at: :desc) }
+  default_scope { where('workout_date > ?', 7.days.ago)
+                  .order(created_at: :desc) }
 end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature 'Increases view counter correctly' do
   before do
     @sohel = User.create!(email: 'test@test.com', first_name: 'test', last_name: 'anon', password: '123456')
-    @exercise = Exercise.create!(user_id: @sohel.id, duration_in_min: 55, workout: 'testing workout', workout_date: '2017-05-03')
+    @exercise = Exercise.create!(user_id: @sohel.id, duration_in_min: 55, workout: 'testing workout', workout_date: Date.today)
   end
 
   scenario 'once page has been visited' do
