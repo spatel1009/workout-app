@@ -16,12 +16,15 @@ class User < ApplicationRecord
   end
 
   def self.search_by_name(name)
-    names_arr = name.split(' ')
+    names_array = name.split(' ')
 
-    if names_arr.size === 1
-      where('first_name LIKE ? or last_name LIKE ?', "%#{names_arr[0]}%", "%#{names_arr[0]}%").order(:first_name)
+    if names_array.size == 1
+      where('first_name ILIKE ? or last_name ILIKE ?',
+        "%#{names_array[0]}%", "%#{names_array[0]}%").order(:first_name)
     else
-      where('first_name LIKE ? or first_name LIKE ? or last_name LIKE ? or last_name LIKE ?', "%#{names_arr[0]}%", "%#{names_arr[1]}%", "%#{names_arr[0]}%", "%#{names_arr[1]}%").order(:first_name)
+      where('first_name ILIKE ? or first_name ILIKE ? or last_name ILIKE ? or last_name ILIKE ?', "%#{names_array[0]}%",
+        "%#{names_array[1]}%", "%#{names_array[0]}%",
+        "%#{names_array[1]}%").order(:first_name)
     end
   end
 end
