@@ -8,6 +8,10 @@ body {
   font-family: 'Mali', cursive;
 }
 
+.btn {
+  width: 100%;
+}
+
 // Navbar
 
 .navbar {
@@ -53,6 +57,15 @@ body {
    display: table-cell;
  }
 
+ // Dashboard Index
+
+.well {
+  display: inline;
+  margin: 10px;
+  height: 60px;
+  color: black;
+  background-color: #d6dadc;
+}
  // Devise errors
 
  #error_explanation {
@@ -88,10 +101,6 @@ body {
 
   .dev-form-field {
     background-color: #d6dadc;
-  }
-
-  .btn {
-    width: 100%;
   }
 
   .btn-dev-upd {

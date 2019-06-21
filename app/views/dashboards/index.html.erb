@@ -1,16 +1,26 @@
-<h1>Workout Lounge!</h1>
-<p>Show off your workout</p>
-<div class='row'>
-  <div class='col-md-10'>
-    <h2>List of Members</h2>
-    <%= will_paginate @athletes, renderer: BootstrapPagination::Rails, class: 'pull-left paginate' %>
-  </div>
-</div>
-
-<div class='row'>
-  <% @athletes.each do |athlete| %>
-    <div class='col-md-10 well member'>
-      <%= athlete.full_name %>
+<div class='container'>
+  <h1>Workout Lounge!</h1>
+  <p>Show off your workout</p>
+  <div class='row'>
+    <div class='col-md-10'>
+      <h2>List of Members</h2>
+      <%= will_paginate @athletes, renderer: BootstrapPagination::Rails, class: 'pull-left paginate' %>
     </div>
-  <% end %>
+  </div>
+
+  
+  <div class='row'>
+    <% @athletes.each do |athlete| %>  
+      <div class='col-md-4 well member'>
+        <div class='col-md-6'>
+          <%= athlete.full_name %>
+        </div>
+        <% if current_user %>
+          <div class='col-md-4 col-md-offset-2'>
+            <%= link_to 'Follow', friendships_path(friend_id: athlete.id), method: :post, class: 'btn btn-success btn-follow pull right' unless current_user.follows_or_same?(athlete) %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
