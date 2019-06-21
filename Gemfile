@@ -17,6 +17,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 gem 'd3-rails', '~> 5.9', '>= 5.9.2'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
