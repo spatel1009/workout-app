@@ -43,6 +43,7 @@ var drawChart = function() {
   var svg = d3.select("#chart").append("svg")
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
+  .attr("color", "#D4AF37")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -67,8 +68,10 @@ var drawChart = function() {
    svg.append("text")
       .attr("x", width / 2)
       .attr("y", height + margin.top - 15)
+      .style("fill", "white")
       .style("text-anchor", "middle")
       .text("Date of workout")
+
 
    svg.append("g")
     .attr("class", "y axis")
@@ -80,6 +83,7 @@ var drawChart = function() {
      .attr("y", 0 - margin.left)
      .attr("x", 0 - (height / 2))
      .attr("dy", "1em")
+     .style("fill", "white")
      .style("text-anchor", "middle")
      .text("Workout duration (min)")
 
@@ -87,6 +91,7 @@ var drawChart = function() {
    svg.append("text")
       .attr("x", (width / 2))
       .attr("y", 0 - (margin.top / 2))
+      .style("fill", "white")
       .style("text-anchor", "middle")
       .style("font-size", "18px")
       .style("text-decoration", "underline")
