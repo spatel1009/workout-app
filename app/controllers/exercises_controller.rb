@@ -5,6 +5,8 @@ class ExercisesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @exercises = Exercise.all_user_exer(@user)
+
+    @friends = @user.friends
   end
 
   def new

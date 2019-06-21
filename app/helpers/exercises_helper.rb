@@ -5,6 +5,7 @@ module ExercisesHelper
       content_tag(:h1, class: 'text-center', style: 'margin:15px') do
         concat user_id?
         concat default
+        concat render partial: 'displaying_friends'
       end
     else
       render partial: 'list_exercises'
