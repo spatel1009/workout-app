@@ -1,7 +1,7 @@
 <div class='container'>
   <div class='row'>
-    <div class='col col-xs-12'>
-      <div class='col-xs-6'>
+    <div class='col col-lg-12'>
+      <div class='col-lg-7'>
         <div>
           <%= user_id? %>
         </div>
@@ -24,7 +24,7 @@
           <%= content_tag :div, '', id: 'chart', data: { workouts: @exercises } %>
         </div>
       </div>
-      <div class='col-xs-5 col-xs-offset-1'>
+      <div class='col-lg-5'>
         <%= render partial: 'displaying_friends' %>
       </div>
     </div>

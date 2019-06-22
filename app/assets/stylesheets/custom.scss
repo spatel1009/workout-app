@@ -210,17 +210,21 @@ body {
 }
 
 .friend-well {
-  height: 60px;
+  height: 100%;
   color: black;
   background-color: #d6dadc;
 }
 
 .friend-link a {
-  color: #D4AF37;
+  background: -webkit-linear-gradient(#D4AF37, rgb(0, 0, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .friend-link a:hover {
-  color: black;
+  background: -webkit-linear-gradient(black, orange);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
 }
 
@@ -253,8 +257,13 @@ body {
   // Chart Styling
 
 .workout-chart {
-  border: 5px solid #d6dadc;
   margin-top: 25px;
+}
+
+@media screen and (min-width: 733px) {
+  .workout-chart {
+    border: 5px solid #d6dadc;
+  }
 }
   
 path {
@@ -304,4 +313,17 @@ hr.msg {
 }
 #post-btn {
   margin-right: -35px;
+}
+
+// Workout Tables for Friends
+
+.table {
+  background: rgb(37, 37, 37);
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  color: black;
+  background-color: #d6dadc;
 }
