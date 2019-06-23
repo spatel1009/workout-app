@@ -17,6 +17,12 @@ RSpec.feature 'Registering a User' do
 
     expect(page).to have_content('You have signed up successfully')
     expect(page.current_path).to eq(root_path)
+
+    user = User.last
+    room = user.room
+    room_name = user.full_name.split.join('-')
+
+    expect(room.name).to eq(room_name)
   end
 
   scenario 'with invalid credentials' do
