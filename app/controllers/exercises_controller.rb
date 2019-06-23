@@ -7,6 +7,10 @@ class ExercisesController < ApplicationController
     @exercises = Exercise.all_user_exer(@user)
 
     @friends = @user.friends
+    set_current_room
+    @message = Message.new
+    @messages = current_room.messages if current_room
+    @followers = Friendship.where(friend_id: @user.id)
   end
 
   def new
@@ -48,11 +52,21 @@ class ExercisesController < ApplicationController
 
   
   private
+
   def set_exercise
     @exercise = Exercise.find(params[:id])
   end
 
   def exercise_params
     params.require(:exercise).permit(:user_id, :duration_in_min, :workout, :workout_date, :count)
+  end
+
+  def set_current_room
+    if params[:roomId]
+      @room = Room.find_by(id: params[:roomId])
+    else
+      @room = current_user.room
+    end
+    session[:current_room] = @room.id if @room
   end
 end
