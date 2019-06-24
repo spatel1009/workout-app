@@ -3,14 +3,13 @@ class ExercisesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @user = User.find(params[:user_id])
-    @exercises = Exercise.all_user_exer(@user)
+    @exercises = current_user.exercises
 
-    @friends = @user.friends
+    @friends = current_user.friends
     set_current_room
     @message = Message.new
     @messages = current_room.messages if current_room
-    @followers = Friendship.where(friend_id: @user.id)
+    @followers = Friendship.where(friend_id: current_user.id)
   end
 
   def new
