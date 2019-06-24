@@ -3,7 +3,9 @@
 
 body {
   margin-top: 100px;
-  background-color: black;
+  background-image: url('mwtHLi.jpg');
+  background-position: center;
+  background-size: cover;
   color: #d6dadc;
   font-family: 'Mali', cursive;
 }
@@ -19,23 +21,26 @@ body {
 // Navbar
 
 .navbar {
-  background: rgb(37, 37, 37);
   padding-bottom: 20px;
+  background: inherit;
+ }
+
+ .navbar-default {
+   border: none;
  }
  
- .navbar-default .navbar-brand {
+ .navbar .navbar-brand {
    padding-top: 25px;
-   font-size: 150%;
+   font-size: 200%;
    font-weight: bold;
    color: #d6dadc;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
  }
  
- .navbar-default .navbar-brand:hover {
+ .navbar .navbar-brand:hover {
    color: #D4AF37;
- }
- 
- .navbar-default {
-   border-bottom: 5px solid rgb(19, 19, 19);
  }
  
  .navbar-nav {
@@ -43,23 +48,99 @@ body {
    padding-right: 20px;
  }
  
- .navbar-default .navbar-nav li > a {
+ .navbar .navbar-nav li > a {
    font-weight: bold;
    font-size: 130%;
    color: #d6dadc;
  }
  
- .navbar-default .navbar-nav li > a:hover {
+ .navbar .navbar-nav li > a:hover {
    color: #D4AF37;
  }
 
- .navbar-default .navbar-nav > .active > a {
+ .navbar .navbar-nav > .active > a {
    color: #06BEE1;
    border: 1px solid #06BEE1;
    background-color: rgb(17, 48, 224);
    padding-bottom: 0;
    display: table-cell;
  }
+
+ .navbar-form {
+   margin-top: 12px;
+   margin-bottom: 0;
+   position: absolute;
+   left: 5%;
+ }
+
+ @media (max-width: 992px) {
+  .navbar {
+    text-transform: uppercase;
+  }
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+      background: black;
+      text-align: center;
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  .navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  .collapse.in{
+      display:block !important;
+  }
+  .navbar-form {
+    position: relative;
+    left: 0;
+    width: 100%;
+  }
+  .min-search {
+    width: 100%;
+  }
+  .min-search .form-control {
+    width: 100%;
+  }
+  .min-search .form-control::-webkit-input-placeholder {
+    text-align: center;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+    text-align: center;  
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+    text-align: center;  
+ }
+ 
+ :-ms-input-placeholder {  
+    text-align: center; 
+ }
+}
+
 
  // Dashboard Index
 
@@ -275,44 +356,56 @@ path {
     stroke-width: 1;
     shape-rendering: crispEdges;
 }
+
+// Chatroom
+
 #chat-window {
-  border: 1px solid #76C95B;
-  margin-top: 50px;
+  border: 1px solid #d6dadc;
+  background: rgb(37, 37, 37);
+  margin-top: 10px;
   margin-bottom: 30px;
 }
 #chat-window header {
-  background: #76C95B;
-  margin-left: -15px;
-  margin-right: -15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  color: #fff;
-  font-size: 120%;
+  background: #d6dadc;
+  padding-bottom: 5px;
+  color: black;
+  font-size: 125%;
+  text-align: center;
+  margin-bottom: 10px;
 }
 #chat-box {
-  min-height: 100px;
+  height: 500px;
 }
-#message-field {
-  width: 96%;
+.chat-title {
+  margin-bottom: 2px;
 }
 .message-body {
   margin-bottom: 2px;
+  margin-left: 5px;
 }
 hr.msg {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+.follower-div {
+  height: 500px;
+  border-right: 1px solid black;
+}
 #followers {
-  border-right: 1px solid #76C95B;
+  display: block;
+  margin-left: 6px;
+}
+#followers a {
+  background: -webkit-linear-gradient(#D4AF37, #d6dadc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .followers {
-  margin-left: -15px;
+  display: block;
 }
-#form-box {
-  margin-left: -15px;
-}
-#post-btn {
-  margin-right: -35px;
+.self-chat {
+  margin-top: 2px;
+  margin-bottom: 5px;
 }
 
 // Workout Tables for Friends
